@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    
+</head>
+<body>
+    <div class="card" style="text-align: center;">
+        <h1>Welcome, <span id="userName" style="color: #007bff;">User</span>!</h1>
+        <p>You have successfully logged in.</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        
+        const savedData = localStorage.getItem('registeredUser');
+        if (savedData) {
+            const user = JSON.parse(savedData);
+            document.getElementById('userName').innerText = user.name;
+        }
+
+        function logout() {
+            window.location.href = "signIn.html";
+        }
+    </script>
+</body>
+</html>
